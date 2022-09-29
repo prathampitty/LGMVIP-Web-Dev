@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Todo List</title>
+	<!-- CSS -->
+	<link rel="stylesheet" href="style.css" />
+	
+	
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,400;0,700;0,900;1,400&family=Montserrat:ital,wght@0,400;0,700;0,900;1,400&display=swap" rel="stylesheet">
+	
+</head>
+<body>
+	
+	<main class="app">
+		
+		<section class="greeting">
+			<center><h2><u>Pratham Pitty's Todo list project </u> </h2></center><br/>
+			<h2 class="title">
+				<input type="text" id="name" placeholder="Add your Task Here" />
+			</h2>
+		</section>
+		
+		
+		
+		<section class="create-todo">
+			<h3><b>CREATE YOUR TODO</b></h3>
+			<form id="new-todo-form">
+				
+				<input 
+					type="text" 
+					placeholder="e.g. WakeUp At 4A.M"
+					name="content"
+					id="content" />
+				
+				<h4>Pick a category</h4>
+				<div class="options">
+					<label>
+						<input type="radio" name="category" id="category1" value="business" /> 
+						<span class="bubble business"></span>
+						<div>Professional (Business)</div>
+					</label>
+					<label>
+						<input type="radio" name="category" id="category2" value="personal" />
+						<span class="bubble personal"></span>
+						<div>Personal</div>
+					</label>
+				</div>
+
+				<input type="submit" value="Add todo" />
+			</form>
+		</section>
+		
+
+		
+		<section class="todo-list">
+			<h3>TODO LIST</h3>
+			<div class="list" id="todo-list"></div>
+		</section>
+		
+
+	</main>
+	
+
+	<!-- JS -->
+	<script src="script.js"></script>
+	
+</body>
+</html>
