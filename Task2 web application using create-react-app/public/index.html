@@ -1,43 +1,167 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
-    <meta
-      name="description"
-      content="Web site created using create-react-app"
-    />
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-    <!--
-      manifest.json provides metadata used when your web app is installed on a
-      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
-    -->
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <!--
-      Notice the use of %PUBLIC_URL% in the tags above.
-      It will be replaced with the URL of the `public` folder during the build.
-      Only files inside the `public` folder can be referenced from the HTML.
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://unpkg.com/flowbite@1.5.3/dist/flowbite.min.css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
+  <script src="https://unpkg.com/flowbite@1.5.3/dist/flowbite.js"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            clifford: '#da373d',
+            priBG: '#222831',
+            secBG: '#393E46',
+            cusBG1: '#00ADB5',
+            cusBG2: '#EEEEEE'
+          }
+        }
+      }
+    }
+  </script>
 
-      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-      work correctly both with client-side routing and a non-root public URL.
-      Learn how to configure a non-root public URL by running `npm run build`.
-    -->
-    <title>React App</title>
-  </head>
-  <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
+<body>
+  
+<nav class="bg-priBG px-2 sm:px-4 py-2.5 dark:bg-priBG fixed w-full z-20 top-0 left-0 border-b border-gray-200 dark:border-gray-600">
+    <div class="container flex flex-wrap justify-between items-center mx-auto">
+    <a href="https://letsgrowmore.in/" class="flex items-center">
+        <img src="https://letsgrowmore.in/wp-content/uploads/2021/05/Artboard-1-1-removebg-preview-e1645900071758.jpg" class="rounded-lg mr-3 w-full h-10 sm:h-14" alt=" Logo">
+        <!-- <span class="self-center text-xl font-semibold whitespace-nowrap dark:text-white">LetsGrowMore</span> -->
+    </a>
+    <div class="flex md:order-2">
+        <button type="button" class="text-cusBG2 bg-cusBG1 hover:bg-cusBG1 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-3 md:mr-0 dark:bg-cusBG1 dark:hover:bg-cusBG1 hover:opacity-90 dark:focus:ring-blue-800 uppercase" onclick="getData()">Get User</button>
+    </div>
+    </div>
+  </nav>
+  <section class="bg-secBG h-screen" id="sec">
+    <div class="px-4 py-16 mx-auto max-w-screen-xl sm:px-6 lg:px-8 sm:py-24">
+      <div class="max-w-xl mx-auto text-center">
+        <h2 class="text-4xl font-bold tracking-tight sm:text-5xl text-cusBG2 uppercase">
+          User data
+        </h2>
+      </div>
+      <div class="mt-6  mx-auto text-center h-56 flex justify-center items-center " id="h4-des">
+        <h4 class="text-2xl font-bold tracking-tight sm:text-5xl text-cusBG2 opacity-50 text-center ">
+          Click  on the "Get user"  tab to get user data
+        </h4>
+      </div>
+  
+      <div
+        class="mt-16 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3 sm:gap-16 "
+      > 
+      
+  
+        <div class="hidden user" >
+        <img
+          src=""
+          alt=""
+          class="object-cover w-24 h-24 mx-auto rounded-full shadow-xl  "
+          id="img-1"
+        />
 
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
+        <blockquote
+          class="flex flex-col justify-between p-12 -mt-6 text-center rounded-lg shadow-xl bg-priBG"
+        >
+          <p class="text-xl font-bold  text-cusBG2" id="name-1"></p>
+          <p class="mt-1 text-lg font-medium  text-cusBG2" id="email-1">
+            
+          </p>
+        </blockquote>
+        </div>
+        <div class="hidden user" >
+        <img
+          src=""
+          alt=""
+          class="object-cover w-24 h-24 mx-auto rounded-full shadow-xl "
+          id="img-2"
+        />
 
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
-  </body>
+        <blockquote
+          class="flex flex-col justify-between p-12 -mt-6 text-center rounded-lg shadow-xl bg-priBG"
+        >
+          <p class="text-xl font-bold  text-cusBG2" id="name-2"></p>
+          <p class="mt-1 text-lg font-medium  text-cusBG2" id="email-2">
+            
+          </p>
+        </blockquote>
+        </div>
+        <div class="hidden user" >
+        <img
+          src=""
+          alt=""
+          class="object-cover w-24 h-24 mx-auto rounded-full shadow-xl "
+          id="img-3"
+        />
+
+        <blockquote
+          class="flex flex-col justify-between p-12 -mt-6 text-center rounded-lg shadow-xl bg-priBG"
+        >
+          <p class="text-xl font-bold  text-cusBG2" id="name-3"></p>
+          <p class="mt-1 text-lg font-medium  text-cusBG2" id="email-3">
+            
+          </p>
+        </blockquote>
+        </div>
+        <div class="hidden user" >
+        <img
+          src=""
+          alt=""
+          class="object-cover w-24 h-24 mx-auto rounded-full shadow-xl "
+          id="img-4"
+        />
+
+        <blockquote
+          class="flex flex-col justify-between p-12 -mt-6 text-center rounded-lg shadow-xl bg-priBG"
+        >
+          <p class="text-xl font-bold  text-cusBG2" id="name-4"></p>
+          <p class="mt-1 text-lg font-medium  text-cusBG2" id="email-4">
+            
+          </p>
+        </blockquote>
+        </div>
+        <div class="hidden user" >
+        <img
+          src=""
+          alt=""
+          class="object-cover w-24 h-24 mx-auto rounded-full shadow-xl "
+          id="img-5"
+        />
+
+        <blockquote
+          class="flex flex-col justify-between p-12 -mt-6 text-center rounded-lg shadow-xl bg-priBG"
+        >
+          <p class="text-xl font-bold  text-cusBG2" id="name-5"></p>
+          <p class="mt-1 text-lg font-medium  text-cusBG2" id="email-5">
+            
+          </p>
+        </blockquote>
+        </div>
+        <div class="hidden user" >
+        <img
+          src=""
+          alt=""
+          class="object-cover w-24 h-24 mx-auto rounded-full shadow-xl "
+          id="img-6"
+        />
+
+        <blockquote
+          class="flex flex-col justify-between p-12 -mt-6 text-center rounded-lg shadow-xl bg-priBG"
+        >
+          <p class="text-xl font-bold  text-cusBG2" id="name-6"></p>
+          <p class="mt-1 text-lg font-medium  text-cusBG2" id="email-6">
+            
+          </p>
+        </blockquote>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="App.js"></script>
+</body>
 </html>
